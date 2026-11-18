@@ -1,0 +1,186 @@
+BasicInfo:
+  Title                   : MiiProbe
+  CompanyCode             : "00"
+  ProductCode             : CTR-P-MPRB
+  ContentType             : Application
+  Logo                    : None
+
+TitleInfo:
+  UniqueId                : 0xf7c21
+  Category                : Application
+
+Option:
+  UseOnSD                 : true
+  FreeProductCode         : true
+  EnableCrypt             : false
+  EnableCompress          : true
+
+AccessControlInfo:
+  CoreVersion             : 2
+  DescVersion             : 2
+  ReleaseKernelMajor      : "02"
+  ReleaseKernelMinor      : "33"
+  UseExtSaveData          : false
+  FileSystemAccess:
+   - DirectSdmc
+  MemoryType              : Application
+  SystemModeExt           : Legacy
+  CpuSpeed                : 804MHz
+  EnableL2Cache           : true
+  CanAccessCore2          : true
+  IdealProcessor          : 0
+  AffinityMask            : 1
+  Priority                : 16
+  DisableDebug            : false
+  EnableForceDebug        : false
+  CanWriteSharedPage      : true
+  CanUsePrivilegedPriority: false
+  CanUseNonAlphabetAndNumber: true
+  PermitMainFunctionArgument: true
+  CanShareDeviceMemory    : true
+  RunnableOnSleep         : true
+  SpecialMemoryArrange    : true
+  HandleTableSize         : 0x200
+  IORegisterMapping:
+   - 1ff00000-1ff7ffff
+  MemoryMapping:
+   - 1f000000-1f5fffff:r
+  SystemCallAccess:
+    SVC_01: 1
+    SVC_02: 2
+    SVC_03: 3
+    SVC_04: 4
+    SVC_05: 5
+    SVC_06: 6
+    SVC_07: 7
+    SVC_08: 8
+    SVC_09: 9
+    SVC_0A: 10
+    SVC_0B: 11
+    SVC_0C: 12
+    SVC_0D: 13
+    SVC_0E: 14
+    SVC_0F: 15
+    SVC_10: 16
+    SVC_11: 17
+    SVC_12: 18
+    SVC_13: 19
+    SVC_14: 20
+    SVC_15: 21
+    SVC_16: 22
+    SVC_17: 23
+    SVC_18: 24
+    SVC_19: 25
+    SVC_1A: 26
+    SVC_1B: 27
+    SVC_1C: 28
+    SVC_1D: 29
+    SVC_1E: 30
+    SVC_1F: 31
+    SVC_20: 32
+    SVC_21: 33
+    SVC_22: 34
+    SVC_23: 35
+    SVC_24: 36
+    SVC_25: 37
+    SVC_26: 38
+    SVC_27: 39
+    SVC_28: 40
+    SVC_29: 41
+    SVC_2A: 42
+    SVC_2B: 43
+    SVC_2C: 44
+    SVC_2D: 45
+    SVC_2E: 46
+    SVC_2F: 47
+    SVC_30: 48
+    SVC_31: 49
+    SVC_32: 50
+    SVC_33: 51
+    SVC_34: 52
+    SVC_35: 53
+    SVC_36: 54
+    SVC_37: 55
+    SVC_38: 56
+    SVC_39: 57
+    SVC_3A: 58
+    SVC_3B: 59
+    SVC_3C: 60
+    SVC_3D: 61
+    SVC_3E: 62
+    SVC_3F: 63
+    SVC_40: 64
+    SVC_41: 65
+    SVC_42: 66
+    SVC_43: 67
+    SVC_44: 68
+    SVC_45: 69
+    SVC_46: 70
+    SVC_47: 71
+    SVC_48: 72
+    SVC_49: 73
+    SVC_4A: 74
+    SVC_4B: 75
+    SVC_4C: 76
+    SVC_4D: 77
+    SVC_4E: 78
+    SVC_4F: 79
+    SVC_50: 80
+    SVC_51: 81
+    SVC_52: 82
+    SVC_53: 83
+    SVC_54: 84
+    SVC_55: 85
+    SVC_56: 86
+    SVC_57: 87
+    SVC_58: 88
+    SVC_59: 89
+    SVC_5A: 90
+    SVC_5B: 91
+    SVC_5C: 92
+    SVC_5D: 93
+    SVC_5E: 94
+    SVC_5F: 95
+    SVC_60: 96
+    SVC_61: 97
+    SVC_62: 98
+    SVC_63: 99
+    SVC_64: 100
+    SVC_65: 101
+    SVC_66: 102
+    SVC_67: 103
+    SVC_68: 104
+    SVC_69: 105
+    SVC_6A: 106
+    SVC_6B: 107
+    SVC_6C: 108
+    SVC_6D: 109
+    SVC_6E: 110
+    SVC_6F: 111
+    SVC_70: 112
+    SVC_71: 113
+    SVC_72: 114
+    SVC_73: 115
+    SVC_74: 116
+    SVC_75: 117
+    SVC_76: 118
+    SVC_77: 119
+    SVC_78: 120
+    SVC_79: 121
+    SVC_7A: 122
+    SVC_7B: 123
+    SVC_7C: 124
+    SVC_7D: 125
+  ServiceAccessControl:
+   - APT:U
+   - cecd:u
+   - cecd:s
+   - cfg:u
+   - fs:USER
+   - gsp::Gpu
+   - hid:USER
+
+SystemControlInfo:
+  SaveDataSize: 0KB
+  RemasterVersion: 0
+  StackSize: 0x40000

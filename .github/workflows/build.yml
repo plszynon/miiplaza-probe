@@ -1,0 +1,40 @@
+name: Build CIA
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitarm
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: |
+          apt-get update
+          apt-get install -y build-essential git zlib1g-dev cmake
+      - name: Build makerom
+        run: |
+          git clone --depth 1 https://github.com/3DSGuy/Project_CTR.git
+          make -C Project_CTR/makerom -j2
+          cp Project_CTR/makerom/bin/makerom /usr/local/bin/makerom
+      - name: Build bannertool
+        run: |
+          git clone --recursive --depth 1 https://github.com/carstene1ns/3ds-bannertool.git
+          cd 3ds-bannertool && mkdir build && cd build
+          cmake .. && make -j2
+          cp bannertool /usr/local/bin/bannertool
+      - name: Build app
+        run: make all
+      - name: Make CIA and 3DSX
+        run: |
+          bannertool makebanner -i banner.png -a silent.wav -o banner.bnr
+          bannertool makesmdh -s "Mii Plaza Probe" -l "Read-only StreetPass inbox probe" -p "plszynon" -i icon.png -o icon.icn
+          3dsxtool miiplaza-probe.elf miiplaza-probe.3dsx --smdh=icon.icn
+          makerom -f cia -o miiplaza-probe.cia -elf miiplaza-probe.elf -rsf app.rsf -icon icon.icn -banner banner.bnr -exefslogo -target t
+      - uses: actions/upload-artifact@v4
+        with:
+          name: miiplaza-probe
+          path: |
+            miiplaza-probe.cia
+            miiplaza-probe.3dsx
